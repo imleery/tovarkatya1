@@ -41,18 +41,19 @@
             display: flex;
             flex-direction: row;
             gap: 20px;
-            justify-content: center; /* Центрирование содержимого */
+            justify-content: center;
+            flex-wrap: wrap; /* Для адаптивного отображения */
         }
 
         .product-images {
             width: 60%;
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between; /* Равномерное распределение фото */
+            justify-content: space-between;
         }
 
         .product-images img {
-            width: 48%; /* По 2 фото в ряд */
+            width: 48%;
             margin-bottom: 10px;
             border-radius: 8px;
             border: 2px solid #ddd;
@@ -63,7 +64,7 @@
         }
 
         .product-images img:hover {
-            transform: scale(1.05); /* Эффект увеличения при наведении */
+            transform: scale(1.05);
         }
 
         .product-description {
@@ -111,7 +112,7 @@
             border-radius: 8px;
             margin-top: 20px;
             margin-left: auto;
-            margin-right: auto; /* Центрирование видео */
+            margin-right: auto;
         }
 
         footer {
@@ -155,7 +156,6 @@
             margin-bottom: 5px;
         }
 
-        /* Стиль модального окна */
         .modal {
             display: none;
             position: fixed;
@@ -179,7 +179,7 @@
         }
 
         .modal-content:hover {
-            transform: scale(1.05); /* Эффект увеличения при наведении на фото в модальном окне */
+            transform: scale(1.05);
         }
 
         .close {
@@ -198,6 +198,70 @@
             color: #f1f1f1;
             text-decoration: none;
             cursor: pointer;
+        }
+
+        /* Медиазапросы для мобильных устройств */
+        @media only screen and (max-width: 768px) {
+            .product-info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product-images {
+                width: 100%;
+            }
+
+            .product-images img {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .product-description {
+                width: 100%;
+            }
+
+            .product-description h2 {
+                font-size: 1.5rem;
+            }
+
+            .video-section video {
+                width: 90%;
+            }
+
+            .price {
+                font-size: 1.2rem;
+            }
+
+            .modal-content {
+                width: 90%;
+            }
+        }
+
+        /* Для очень маленьких экранов */
+        @media only screen and (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .product-description h2 {
+                font-size: 1.2rem;
+            }
+
+            .product-description p {
+                font-size: 0.9rem;
+            }
+
+            .product-description span {
+                font-size: 1rem;
+            }
+
+            .sticker {
+                font-size: 1.2rem;
+            }
+
+            .price {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
@@ -263,25 +327,4 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 Магазин Одежды. Все права защищены.</p>
-        <p><a href="#">Политика конфиденциальности</a> | <a href="#">Контакты</a></p>
-    </footer>
-
-    <script>
-        // Открытие модального окна
-        function openModal(image) {
-            var modal = document.getElementById("myModal");
-            var modalImg = document.getElementById("img01");
-            modal.style.display = "block";
-            modalImg.src = image.src;
-        }
-
-        // Закрытие модального окна
-        function closeModal() {
-            var modal = document.getElementById("myModal");
-            modal.style.display = "none";
-        }
-    </script>
-
-</body>
-</html>
+        <p>&copy; 202
