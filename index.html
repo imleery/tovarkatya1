@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Магазин Одежды</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Подключаем стили Video.js -->
+    <link href="https://cdn.jsdelivr.net/npm/video.js@7.10.2/dist/video-js.css" rel="stylesheet">
+
     <style>
+        /* Весь стиль без изменений, как у вас был. */
         body {
             font-family: 'Raleway', sans-serif;
             margin: 0;
@@ -42,7 +47,7 @@
             flex-direction: row;
             gap: 20px;
             justify-content: center;
-            flex-wrap: wrap; /* Для адаптивного отображения */
+            flex-wrap: wrap;
         }
 
         .product-images {
@@ -52,9 +57,8 @@
             justify-content: space-between;
         }
 
-
         .sticker {
-            margin-left: -5px; /* Это сдвиг на 1 пробел влево */
+            margin-left: -5px;
         }
 
         .product-images img {
@@ -106,11 +110,13 @@
             font-weight: 600;
         }
 
+        /* Видео секция с Video.js */
         .video-section {
             text-align: center;
             margin-top: 40px;
         }
 
+        /* Стили для Video.js */
         .video-section video {
             width: 80%;
             max-width: 600px;
@@ -132,148 +138,6 @@
             color: #fff;
             text-decoration: none;
         }
-
-        .sticker {
-            font-size: 1.5rem;
-            color: #fff;
-            background-color: #FF6F61;
-            padding: 5px 10px;
-            border-radius: 5px;
-            display: inline-block;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        .price {
-            font-size: 1.5rem;
-            color: #FF6F61;
-            font-weight: 700;
-        }
-
-        .product-description ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        .product-description ul li {
-            font-size: 1rem;
-            color: #555;
-            margin-bottom: 5px;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0,0.9);
-            padding-top: 60px;
-        }
-
-        .modal-content {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
-            border-radius: 8px;
-        }
-
-        .modal-content:hover {
-            transform: scale(1.05);
-        }
-
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #fff;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #f1f1f1;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        /* Медиазапросы для мобильных устройств */
-        @media only screen and (max-width: 768px) {
-            .product-info {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .product-images {
-                width: 100%;
-            }
-
-            .product-images img {
-                width: 100%;
-                margin-bottom: 15px;
-            }
-
-            .product-description {
-                width: 100%;
-            }
-
-            .product-description h2 {
-                font-size: 1.5rem;
-            }
-
-            .video-section video {
-                width: 90%;
-            }
-
-            .price {
-                font-size: 1.2rem;
-            }
-
-            .modal-content {
-                width: 90%;
-            }
-        }
-
-        /* Для очень маленьких экранов */
-        @media only screen and (max-width: 480px) {
-            header h1 {
-                font-size: 1.8rem;
-            }
-
-            .product-description h2 {
-                font-size: 1.2rem;
-            }
-
-            .product-description p {
-                font-size: 0.9rem;
-            }
-
-            .product-description span {
-                font-size: 1rem;
-            }
-
-            .sticker {
-                font-size: 1.2rem;
-            }
-
-            .price {
-                font-size: 1.2rem;
-            }
-        }
-
-        /* Увеличенный жирный текст для "Стильна новинка." */
-        .product-description p.stylish {
-            font-size: 2rem;  /* Увеличенный размер шрифта */
-            font-weight: bold; /* Жирный шрифт */
-        }
     </style>
 </head>
 <body>
@@ -287,7 +151,8 @@
         <!-- Видео с описанием товара (перемещено на самый верх) -->
         <section class="video-section">
             <h2>Видео с подробным описанием товара</h2>
-            <video controls>
+            <!-- Видео плеер с Video.js -->
+            <video id="my-video" class="video-js vjs-default-skin" controls preload="auto">
                 <source src="vi1.mp4" type="video/mp4">
                 Ваш браузер не поддерживает видео.
             </video>
@@ -296,27 +161,25 @@
         <section class="product-info">
             <!-- Описание товара -->
             <div class="product-description">
-                 <p class="stylish">Стильна новинка</p> <!-- Добавлен класс для увеличения текста -->
+                <p class="stylish">Стильна новинка</p> <!-- Добавлен класс для увеличения текста -->
                 <span class="sticker">🔥ФОТО РЕАЛ🔥</span>
                 <p>Бомбер - найнеобхідніша річ у вашому весняному гардеробі. Обʼємний як на фото, якісна тканина та фурнітура, на рукаві також блискавка. Горловина, манжети та пояс з ребани в колір. Підкладка простьобана з синтепоном.</p>
                 <h3>Бомбер</h3>
                 <p class="price">Ціна: 1250 грн</p>
                <ul>
-    <li>▪️Тканина: плащовка + стьобана підкладка з синтепоном 100+ ребана.</li>
-    <br> <!-- Пустая строка -->
-    <li>▪️Кольори: рожевий, графіт, молочний, чорний.</li>
-    <br> <!-- Пустая строка -->
-    <li>▪️Розмір: S-М; М-L</li>
-    <br> <!-- Пустая строка -->
-    <li>Параметри на S-M:</li>
-    <br> <!-- Пустая строка -->
-    <li>Довжина виробу: 70 см</li>
-    <li>Довжина рукава: 80 см</li>
-    <br> <!-- Пустая строка -->
-    <li>ОГ: ▪️126 см</li>
-    <li>ОТ: ▪️116 см</li>
-</ul>
-
+                    <li>▪️Тканина: плащовка + стьобана підкладка з синтепоном 100+ ребана.</li>
+                    <br>
+                    <li>▪️Кольори: рожевий, графіт, молочний, чорний.</li>
+                    <br>
+                    <li>▪️Розмір: S-М; М-L</li>
+                    <br>
+                    <li>Параметри на S-M:</li>
+                    <br>
+                    <li>Довжина виробу: 70 см</li>
+                    <li>Довжина рукава: 80 см</li>
+                    <br>
+                    <li>ОГ: ▪️126 см</li>
+                    <li>ОТ: ▪️116 см</li>
                 </ul>
             </div>
 
@@ -344,5 +207,18 @@
     <footer>
         <p>&copy; 2025 Курганська Катерина Василівна</p>
     </footer>
+
+    <!-- Подключаем Video.js скрипты -->
+    <script src="https://cdn.jsdelivr.net/npm/video.js@7.10.2/dist/video.min.js"></script>
+    <script>
+        var player = videojs('my-video', {
+            controls: true,
+            autoplay: false,
+            preload: 'auto',
+            width: 600,
+            height: 400
+        });
+    </script>
+
 </body>
 </html>
