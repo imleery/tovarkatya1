@@ -25,7 +25,7 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -43,8 +43,13 @@
 
         .product-images img {
             width: 100%;
+            max-width: 300px; /* Ограничиваем максимальную ширину изображений */
+            height: auto;
             border-radius: 8px;
             margin-bottom: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .product-description {
@@ -72,18 +77,18 @@
 
         .gallery img {
             width: 30%;
+            max-width: 200px; /* Уменьшаем размеры изображений в галерее */
             border-radius: 8px;
         }
 
         .video-section {
-            display: flex;
-            justify-content: flex-end;
+            text-align: center;
             margin-top: 40px;
         }
 
         .video-section video {
-            width: 50%; /* Уменьшил размер видео */
-            max-width: 600px;
+            width: 70%; /* Уменьшаем видео */
+            max-width: 500px;
             border-radius: 8px;
         }
 
