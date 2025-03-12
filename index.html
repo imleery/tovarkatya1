@@ -290,13 +290,11 @@
         <!-- Видео с описанием товара (перемещено на самый верх) -->
         <section class="video-section">
             <h2>Видео с подробным описанием товара</h2>
-            <!-- Используем Plyr для локального видео -->
-            <div class="plyr__video-embed" id="player">
-                <video controls>
-                    <source src="vi1.mp4" type="video/mp4">
-                    Ваш браузер не поддерживает видео.
-                </video>
-            </div>
+            <!-- Вставляем обычный видеоплеер с элементом video -->
+            <video id="video-player" controls>
+                <source src="vi1.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
         </section>
 
         <section class="product-info">
@@ -348,16 +346,6 @@
     <footer>
         <p>&copy; 2025 Курганська Катерина Василівна</p>
     </footer>
-
-    <!-- Подключаем Plyr JS -->
-    <script src="https://cdn.jsdelivr.net/npm/plyr@3.6.2/dist/plyr.js"></script>
-
-    <script>
-        // Инициализируем Plyr для нашего видео
-        const player = new Plyr('video', {
-            captions: { active: true, language: 'ru' }
-        });
-    </script>
 
 </body>
 </html>
