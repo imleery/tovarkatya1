@@ -114,10 +114,10 @@
             margin-top: 40px;
         }
 
-        .video-section video {
-            width: 80%;
-            max-width: 600px;
-            border-radius: 8px;
+        /* Новый стиль плеера */
+        .plyr__video-embed {
+            width: 100%;
+            max-width: 800px;
             margin-top: 20px;
             margin-left: auto;
             margin-right: auto;
@@ -162,50 +162,6 @@
             font-size: 1rem;
             color: #555;
             margin-bottom: 5px;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0,0.9);
-            padding-top: 60px;
-        }
-
-        .modal-content {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
-            border-radius: 8px;
-        }
-
-        .modal-content:hover {
-            transform: scale(1.05);
-        }
-
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #fff;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #f1f1f1;
-            text-decoration: none;
-            cursor: pointer;
         }
 
         /* Медиазапросы для мобильных устройств */
@@ -288,14 +244,15 @@
 
     <div class="container">
         <!-- Видео с описанием товара (перемещено на самый верх) -->
-        <section class="video-section">
-            <h2>Видео с подробным описанием товара</h2>
-            <!-- Вставляем обычный видеоплеер с элементом video -->
-            <video id="video-player" controls>
-                <source src="vi1.mp4" type="video/mp4">
-                Ваш браузер не поддерживает видео.
-            </video>
-        </section>
+       <section class="video-section">
+    <h2>Видео с подробным описанием товара</h2>
+    <!-- Вставляем локальное видео -->
+    <video id="video-player" controls>
+        <source src="vi1.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+    </video>
+</section>
+
 
         <section class="product-info">
             <!-- Описание товара -->
@@ -347,5 +304,5 @@
         <p>&copy; 2025 Курганська Катерина Василівна</p>
     </footer>
 
-</body>
-</html>
+    <!-- Подключаем Plyr -->
+    <script src="
