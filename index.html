@@ -291,9 +291,12 @@
         <!-- Видео с описанием товара (перемещено на самый верх) -->
         <section class="video-section">
             <h2>Видео с подробным описанием товара</h2>
-            <!-- Используем Plyr для видео -->
+           <!-- Используем Plyr для локального видео -->
             <div class="plyr__video-embed" id="player">
-                <iframe src="https://www.youtube.com/embed/vi1.mp4" allowfullscreen allow="autoplay"></iframe>
+                <video controls>
+                    <source src="vi1.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
             </div>
         </section>
 
