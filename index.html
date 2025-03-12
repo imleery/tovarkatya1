@@ -67,6 +67,7 @@
             flex-wrap: wrap;
             gap: 10px;
             margin-top: 20px;
+            justify-content: center;
         }
 
         .gallery img {
@@ -75,13 +76,14 @@
         }
 
         .video-section {
-            text-align: center;
+            display: flex;
+            justify-content: flex-end;
             margin-top: 40px;
         }
 
         .video-section video {
-            width: 80%;
-            max-width: 800px;
+            width: 50%; /* Уменьшил размер видео */
+            max-width: 600px;
             border-radius: 8px;
         }
 
@@ -105,29 +107,26 @@
         <h1>Магазин Одежды</h1>
         <p>Уникальные и стильные вещи для вашего гардероба!</p>
     </header>
-            </div>
 
+    <div class="container">
+        <section class="product-info">
             <!-- Описание товара -->
             <div class="product-description">
                 <h2>Модное платье</h2>
                 <p>Это элегантное платье идеально подойдёт для вечернего выхода или важного мероприятия. Оно выполнено из качественных материалов, что обеспечивает комфорт и стиль. Доступно в разных цветах и размерах. Закажите прямо сейчас!</p>
+            </div>
 
-
- <!-- Галерея фото товара -->
-        <section class="gallery">
-            <img src="ser1.jpg" alt="Фото 1">
-            <img src="ser2.jpg" alt="Фото 2">
-            <img src="be1.jpg" alt="Фото 3">
-            <img src="be2.jpg" alt="Фото 4">
-            <img src="chern1.jpg" alt="Фото 5">
-            <img src="chern2.jpg" alt="Фото 6">
-            <img src="roz1.jpg" alt="Фото 7">
-            <img src="roz2.jpg" alt="Фото 8">
-            <img src="roz3.jpg" alt="Фото 9">
-        </section>
-    </div>
-
-
+            <!-- Галерея фото товара -->
+            <div class="product-images">
+                <img src="ser1.jpg" alt="Фото 1">
+                <img src="ser2.jpg" alt="Фото 2">
+                <img src="be1.jpg" alt="Фото 3">
+                <img src="be2.jpg" alt="Фото 4">
+                <img src="chern1.jpg" alt="Фото 5">
+                <img src="chern2.jpg" alt="Фото 6">
+                <img src="roz1.jpg" alt="Фото 7">
+                <img src="roz2.jpg" alt="Фото 8">
+                <img src="roz3.jpg" alt="Фото 9">
             </div>
         </section>
 
@@ -139,6 +138,7 @@
                 Ваш браузер не поддерживает видео.
             </video>
         </section>
+    </div>
 
     <footer>
         <p>&copy; 2025 Магазин Одежды. Все права защищены.</p>
