@@ -114,8 +114,7 @@
             margin-top: 40px;
         }
 
-        /* Стили для Plyr */
-        .plyr__video-embed {
+        .video-section video {
             width: 80%;
             max-width: 600px;
             border-radius: 8px;
@@ -233,7 +232,7 @@
                 font-size: 1.5rem;
             }
 
-            .plyr__video-embed {
+            .video-section video {
                 width: 90%;
             }
 
@@ -291,7 +290,7 @@
         <!-- Видео с описанием товара (перемещено на самый верх) -->
         <section class="video-section">
             <h2>Видео с подробным описанием товара</h2>
-           <!-- Используем Plyr для локального видео -->
+            <!-- Используем Plyr для локального видео -->
             <div class="plyr__video-embed" id="player">
                 <video controls>
                     <source src="vi1.mp4" type="video/mp4">
@@ -303,12 +302,12 @@
         <section class="product-info">
             <!-- Описание товара -->
             <div class="product-description">
-                 <p class="stylish">Стильна новинка</p> <!-- Добавлен класс для увеличения текста -->
+                <p class="stylish">Стильна новинка</p> <!-- Добавлен класс для увеличения текста -->
                 <span class="sticker">🔥ФОТО РЕАЛ🔥</span>
                 <p>Бомбер - найнеобхідніша річ у вашому весняному гардеробі. Обʼємний як на фото, якісна тканина та фурнітура, на рукаві також блискавка. Горловина, манжети та пояс з ребани в колір. Підкладка простьобана з синтепоном.</p>
                 <h3>Бомбер</h3>
                 <p class="price">Ціна: 1250 грн</p>
-               <ul>
+                <ul>
                     <li>▪️Тканина: плащовка + стьобана підкладка з синтепоном 100+ ребана.</li>
                     <br> <!-- Пустая строка -->
                     <li>▪️Кольори: рожевий, графіт, молочний, чорний.</li>
@@ -331,41 +330,33 @@
                 <img src="ser2.jpg" alt="Фото 2" onclick="openModal(this)">
                 <img src="be1.jpg" alt="Фото 3" onclick="openModal(this)">
                 <img src="be2.jpg" alt="Фото 4" onclick="openModal(this)">
+                <img src="chern1.jpg" alt="Фото 5" onclick="openModal(this)">
+                <img src="chern2.jpg" alt="Фото 6" onclick="openModal(this)">
+                <img src="roz1.jpg" alt="Фото 7" onclick="openModal(this)">
+                <img src="roz2.jpg" alt="Фото 8" onclick="openModal(this)">
+                <img src="roz3.jpg" alt="Фото 9" onclick="openModal(this)">
             </div>
         </section>
     </div>
 
-    <footer>
-        <p>© 2025 Магазин Одежды</p>
-    </footer>
-
-    <!-- Модальное окно для увеличения изображений -->
+    <!-- Модальное окно -->
     <div id="myModal" class="modal">
         <span class="close" onclick="closeModal()">&times;</span>
         <img class="modal-content" id="img01">
     </div>
 
+    <footer>
+        <p>&copy; 2025 Курганська Катерина Василівна</p>
+    </footer>
+
     <!-- Подключаем Plyr JS -->
     <script src="https://cdn.jsdelivr.net/npm/plyr@3.6.2/dist/plyr.js"></script>
 
     <script>
-        const player = new Plyr('#player', {
+        // Инициализируем Plyr для нашего видео
+        const player = new Plyr('video', {
             captions: { active: true, language: 'ru' }
         });
-
-        // Открытие модального окна
-        function openModal(img) {
-            var modal = document.getElementById("myModal");
-            var modalImg = document.getElementById("img01");
-            modal.style.display = "block";
-            modalImg.src = img.src;
-        }
-
-        // Закрытие модального окна
-        function closeModal() {
-            var modal = document.getElementById("myModal");
-            modal.style.display = "none";
-        }
     </script>
 
 </body>
