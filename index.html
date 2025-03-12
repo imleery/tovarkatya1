@@ -34,25 +34,31 @@
             display: flex;
             flex-direction: row;
             gap: 20px;
-            justify-content: space-between;
+            justify-content: center; /* Центрирование содержимого */
         }
 
         .product-images {
             width: 60%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between; /* Равномерное распределение фото */
         }
 
         .product-images img {
             width: 48%; /* По 2 фото в ряд */
             margin-bottom: 10px;
             border-radius: 8px;
-            border: 2px solid #ddd; /* Рамка вокруг изображений */
+            border: 2px solid #ddd;
             padding: 5px;
             box-sizing: border-box;
-            display: inline-block;
         }
 
         .product-description {
             width: 35%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .product-description h2 {
@@ -66,23 +72,6 @@
             color: #555;
         }
 
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 20px;
-            justify-content: space-between;
-        }
-
-        .gallery img {
-            width: 48%; /* По 2 изображения в ряд */
-            max-width: 200px;
-            border-radius: 8px;
-            border: 2px solid #ddd; /* Рамка вокруг картинок */
-            padding: 5px;
-            box-sizing: border-box;
-        }
-
         .video-section {
             text-align: center;
             margin-top: 40px;
@@ -93,6 +82,8 @@
             max-width: 600px;
             border-radius: 8px;
             margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto; /* Центрирование видео */
         }
 
         footer {
@@ -117,16 +108,7 @@
     </header>
 
     <div class="container">
-        <section class="product-info">
-            <!-- Описание товара -->
-            <div class="product-description">
-                <h2>Модное платье</h2>
-                <p>Это элегантное платье идеально подойдёт для вечернего выхода или важного мероприятия. Оно выполнено из качественных материалов, что обеспечивает комфорт и стиль. Доступно в разных цветах и размерах. Закажите прямо сейчас!</p>
-            </div>
-
-
-
- <!-- Видео с описанием товара -->
+        <!-- Видео с описанием товара (перемещено на самый верх) -->
         <section class="video-section">
             <h2>Видео с подробным описанием товара</h2>
             <video controls>
@@ -134,7 +116,13 @@
                 Ваш браузер не поддерживает видео.
             </video>
         </section>
-    </div>
+
+        <section class="product-info">
+            <!-- Описание товара -->
+            <div class="product-description">
+                <h2>Модное платье</h2>
+                <p>Это элегантное платье идеально подойдёт для вечернего выхода или важного мероприятия. Оно выполнено из качественных материалов, что обеспечивает комфорт и стиль. Доступно в разных цветах и размерах. Закажите прямо сейчас!</p>
+            </div>
 
             <!-- Галерея фото товара -->
             <div class="product-images">
@@ -149,8 +137,7 @@
                 <img src="roz3.jpg" alt="Фото 9">
             </div>
         </section>
-
-          </div>
+    </div>
 
     <footer>
         <p>&copy; 2025 Магазин Одежды. Все права защищены.</p>
