@@ -6,11 +6,10 @@
     <title>Магазин Одежды</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
     
-    <!-- Подключаем стили Video.js -->
-    <link href="https://cdn.jsdelivr.net/npm/video.js@7.10.2/dist/video-js.css" rel="stylesheet">
+    <!-- Подключаем стили Plyr -->
+    <link href="https://cdn.jsdelivr.net/npm/plyr@3.6.2/dist/plyr.css" rel="stylesheet">
 
     <style>
-        /* Весь стиль без изменений, как у вас был. */
         body {
             font-family: 'Raleway', sans-serif;
             margin: 0;
@@ -47,7 +46,7 @@
             flex-direction: row;
             gap: 20px;
             justify-content: center;
-            flex-wrap: wrap;
+            flex-wrap: wrap; /* Для адаптивного отображения */
         }
 
         .product-images {
@@ -58,7 +57,7 @@
         }
 
         .sticker {
-            margin-left: -5px;
+            margin-left: -5px; /* Это сдвиг на 1 пробел влево */
         }
 
         .product-images img {
@@ -110,17 +109,16 @@
             font-weight: 600;
         }
 
-        /* Видео секция с Video.js */
         .video-section {
             text-align: center;
             margin-top: 40px;
         }
 
-        /* Стили для Video.js */
-        .video-section video {
-            width: 100%; /* Устанавливаем ширину 100% от контейнера */
-            height: auto; /* Высота будет автоматически подстраиваться */
-            max-width: 800px; /* Максимальная ширина плеера */
+        /* Стили для Plyr */
+        .plyr__video-embed {
+            width: 80%;
+            max-width: 600px;
+            border-radius: 8px;
             margin-top: 20px;
             margin-left: auto;
             margin-right: auto;
@@ -138,6 +136,148 @@
             color: #fff;
             text-decoration: none;
         }
+
+        .sticker {
+            font-size: 1.5rem;
+            color: #fff;
+            background-color: #FF6F61;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            color: #FF6F61;
+            font-weight: 700;
+        }
+
+        .product-description ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .product-description ul li {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.9);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            border-radius: 8px;
+        }
+
+        .modal-content:hover {
+            transform: scale(1.05);
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #f1f1f1;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Медиазапросы для мобильных устройств */
+        @media only screen and (max-width: 768px) {
+            .product-info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product-images {
+                width: 100%;
+            }
+
+            .product-images img {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .product-description {
+                width: 100%;
+            }
+
+            .product-description h2 {
+                font-size: 1.5rem;
+            }
+
+            .plyr__video-embed {
+                width: 90%;
+            }
+
+            .price {
+                font-size: 1.2rem;
+            }
+
+            .modal-content {
+                width: 90%;
+            }
+        }
+
+        /* Для очень маленьких экранов */
+        @media only screen and (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .product-description h2 {
+                font-size: 1.2rem;
+            }
+
+            .product-description p {
+                font-size: 0.9rem;
+            }
+
+            .product-description span {
+                font-size: 1rem;
+            }
+
+            .sticker {
+                font-size: 1.2rem;
+            }
+
+            .price {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Увеличенный жирный текст для "Стильна новинка." */
+        .product-description p.stylish {
+            font-size: 2rem;  /* Увеличенный размер шрифта */
+            font-weight: bold; /* Жирный шрифт */
+        }
     </style>
 </head>
 <body>
@@ -151,33 +291,32 @@
         <!-- Видео с описанием товара (перемещено на самый верх) -->
         <section class="video-section">
             <h2>Видео с подробным описанием товара</h2>
-            <!-- Видео плеер с Video.js -->
-            <video id="my-video" class="video-js vjs-default-skin" controls preload="auto">
-                <source src="vi1.mp4" type="video/mp4">
-                Ваш браузер не поддерживает видео.
-            </video>
+            <!-- Используем Plyr для видео -->
+            <div class="plyr__video-embed" id="player">
+                <iframe src="https://www.youtube.com/embed/vi1.mp4" allowfullscreen allow="autoplay"></iframe>
+            </div>
         </section>
 
         <section class="product-info">
             <!-- Описание товара -->
             <div class="product-description">
-                <p class="stylish">Стильна новинка</p>
+                 <p class="stylish">Стильна новинка</p> <!-- Добавлен класс для увеличения текста -->
                 <span class="sticker">🔥ФОТО РЕАЛ🔥</span>
                 <p>Бомбер - найнеобхідніша річ у вашому весняному гардеробі. Обʼємний як на фото, якісна тканина та фурнітура, на рукаві також блискавка. Горловина, манжети та пояс з ребани в колір. Підкладка простьобана з синтепоном.</p>
                 <h3>Бомбер</h3>
                 <p class="price">Ціна: 1250 грн</p>
                <ul>
                     <li>▪️Тканина: плащовка + стьобана підкладка з синтепоном 100+ ребана.</li>
-                    <br>
+                    <br> <!-- Пустая строка -->
                     <li>▪️Кольори: рожевий, графіт, молочний, чорний.</li>
-                    <br>
+                    <br> <!-- Пустая строка -->
                     <li>▪️Розмір: S-М; М-L</li>
-                    <br>
+                    <br> <!-- Пустая строка -->
                     <li>Параметри на S-M:</li>
-                    <br>
+                    <br> <!-- Пустая строка -->
                     <li>Довжина виробу: 70 см</li>
                     <li>Довжина рукава: 80 см</li>
-                    <br>
+                    <br> <!-- Пустая строка -->
                     <li>ОГ: ▪️126 см</li>
                     <li>ОТ: ▪️116 см</li>
                 </ul>
@@ -189,35 +328,41 @@
                 <img src="ser2.jpg" alt="Фото 2" onclick="openModal(this)">
                 <img src="be1.jpg" alt="Фото 3" onclick="openModal(this)">
                 <img src="be2.jpg" alt="Фото 4" onclick="openModal(this)">
-                <img src="chern1.jpg" alt="Фото 5" onclick="openModal(this)">
-                <img src="chern2.jpg" alt="Фото 6" onclick="openModal(this)">
-                <img src="roz1.jpg" alt="Фото 7" onclick="openModal(this)">
-                <img src="roz2.jpg" alt="Фото 8" onclick="openModal(this)">
-                <img src="roz3.jpg" alt="Фото 9" onclick="openModal(this)">
             </div>
         </section>
     </div>
 
-    <!-- Модальное окно -->
+    <footer>
+        <p>© 2025 Магазин Одежды</p>
+    </footer>
+
+    <!-- Модальное окно для увеличения изображений -->
     <div id="myModal" class="modal">
         <span class="close" onclick="closeModal()">&times;</span>
         <img class="modal-content" id="img01">
     </div>
 
-    <footer>
-        <p>&copy; 2025 Курганська Катерина Василівна</p>
-    </footer>
+    <!-- Подключаем Plyr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/plyr@3.6.2/dist/plyr.js"></script>
 
-    <!-- Подключаем Video.js скрипты -->
-    <script src="https://cdn.jsdelivr.net/npm/video.js@7.10.2/dist/video.min.js"></script>
     <script>
-        var player = videojs('my-video', {
-            controls: true,
-            autoplay: false,
-            preload: 'auto',
-            width: '100%',
-            height: 'auto'
+        const player = new Plyr('#player', {
+            captions: { active: true, language: 'ru' }
         });
+
+        // Открытие модального окна
+        function openModal(img) {
+            var modal = document.getElementById("myModal");
+            var modalImg = document.getElementById("img01");
+            modal.style.display = "block";
+            modalImg.src = img.src;
+        }
+
+        // Закрытие модального окна
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
     </script>
 
 </body>
