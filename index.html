@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Магазин Одежды</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Подключение стилей и скриптов Plyr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.7.3/dist/plyr.css" />
+    <script src="https://cdn.jsdelivr.net/npm/plyr@3.7.3/dist/plyr.js"></script>
     <style>
         body {
             font-family: 'Raleway', sans-serif;
@@ -50,26 +53,6 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-        }
-
-
-        .sticker {
-            margin-left: -5px; /* Это сдвиг на 1 пробел влево */
-        }
-
-        .product-images img {
-            width: 48%;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            border: 2px solid #ddd;
-            padding: 5px;
-            box-sizing: border-box;
-            transition: transform 0.3s ease-in-out;
-            cursor: pointer;
-        }
-
-        .product-images img:hover {
-            transform: scale(1.05);
         }
 
         .product-description {
@@ -161,50 +144,6 @@
             margin-bottom: 5px;
         }
 
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0,0.9);
-            padding-top: 60px;
-        }
-
-        .modal-content {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
-            border-radius: 8px;
-        }
-
-        .modal-content:hover {
-            transform: scale(1.05);
-        }
-
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #fff;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #f1f1f1;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
         /* Медиазапросы для мобильных устройств */
         @media only screen and (max-width: 768px) {
             .product-info {
@@ -287,40 +226,37 @@
         <!-- Видео с описанием товара (перемещено на самый верх) -->
         <section class="video-section">
             <h2>Видео с подробным описанием товара</h2>
-            <video controls>
+            <!-- Используем плеер Plyr -->
+            <video id="player" controls>
                 <source src="vi1.mp4" type="video/mp4">
                 Ваш браузер не поддерживает видео.
             </video>
         </section>
 
         <section class="product-info">
-            <!-- Описание товара -->
             <div class="product-description">
-                 <p class="stylish">Стильна новинка</p> <!-- Добавлен класс для увеличения текста -->
+                <p class="stylish">Стильна новинка</p> <!-- Добавлен класс для увеличения текста -->
                 <span class="sticker">🔥ФОТО РЕАЛ🔥</span>
                 <p>Бомбер - найнеобхідніша річ у вашому весняному гардеробі. Обʼємний як на фото, якісна тканина та фурнітура, на рукаві також блискавка. Горловина, манжети та пояс з ребани в колір. Підкладка простьобана з синтепоном.</p>
                 <h3>Бомбер</h3>
                 <p class="price">Ціна: 1250 грн</p>
-               <ul>
-    <li>▪️Тканина: плащовка + стьобана підкладка з синтепоном 100+ ребана.</li>
-    <br> <!-- Пустая строка -->
-    <li>▪️Кольори: рожевий, графіт, молочний, чорний.</li>
-    <br> <!-- Пустая строка -->
-    <li>▪️Розмір: S-М; М-L</li>
-    <br> <!-- Пустая строка -->
-    <li>Параметри на S-M:</li>
-    <br> <!-- Пустая строка -->
-    <li>Довжина виробу: 70 см</li>
-    <li>Довжина рукава: 80 см</li>
-    <br> <!-- Пустая строка -->
-    <li>ОГ: ▪️126 см</li>
-    <li>ОТ: ▪️116 см</li>
-</ul>
-
+                <ul>
+                    <li>▪️Тканина: плащовка + стьобана підкладка з синтепоном 100+ ребана.</li>
+                    <br> <!-- Пустая строка -->
+                    <li>▪️Кольори: рожевий, графіт, молочний, чорний.</li>
+                    <br> <!-- Пустая строка -->
+                    <li>▪️Розмір: S-М; М-L</li>
+                    <br> <!-- Пустая строка -->
+                    <li>Параметри на S-M:</li>
+                    <br> <!-- Пустая строка -->
+                    <li>Довжина виробу: 70 см</li>
+                    <li>Довжина рукава: 80 см</li>
+                    <br> <!-- Пустая строка -->
+                    <li>ОГ: ▪️126 см</li>
+                    <li>ОТ: ▪️116 см</li>
                 </ul>
             </div>
 
-            <!-- Галерея фото товара -->
             <div class="product-images">
                 <img src="ser1.jpg" alt="Фото 1" onclick="openModal(this)">
                 <img src="ser2.jpg" alt="Фото 2" onclick="openModal(this)">
@@ -344,5 +280,10 @@
     <footer>
         <p>&copy; 2025 Курганська Катерина Василівна</p>
     </footer>
+
+    <script>
+        // Инициализация плеера Plyr
+        const player = new Plyr('#player');
+    </script>
 </body>
 </html>
