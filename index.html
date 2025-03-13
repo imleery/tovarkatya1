@@ -40,46 +40,51 @@
 
         .product-info {
             display: flex;
-            flex-direction: row;
-            gap: 20px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .product-images, .video-section {
+            width: 45%; /* Уменьшаем ширину блоков для левой части */
+        }
+
+        .product-description {
+            width: 45%; /* Уменьшаем ширину блока для текста */
+            display: flex;
+            flex-direction: column;
             justify-content: center;
-            flex-wrap: wrap; /* Для адаптивного отображения */
+        }
+
+        .video-section {
+            margin-top: 0; /* Убираем верхний отступ */
+            max-width: 100%; /* Видео не будет ограничено по ширине */
+            margin: 0 auto;
+        }
+
+        .plyr__video-embed {
+            max-width: 100%;
+            height: auto;
         }
 
         .product-images {
-            width: 60%;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
         }
 
-        .sticker {
-            margin-left: -5px; /* Это сдвиг на 1 пробел влево */
+        .product-images img {
+            width: 48%;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border: 2px solid #ddd;
+            padding: 5px;
+            box-sizing: border-box;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
         }
 
-       .product-images img {
-    width: 48%;
-    margin-bottom: 10px;
-    border-radius: 15px; /* Скругленные углы */
-    border: 5px solid #4B0082; /* Рамка с цветом */
-    padding: 5px;
-    box-sizing: border-box;
-    transition: transform 0.3s ease-in-out;
-    cursor: pointer;
-    background-color: #fff; /* Белый фон внутри рамки */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Тень для красивого эффекта */
-}
-
-.product-images img:hover {
-    transform: scale(1.05);
-}
-
-        .product-description {
-            width: 35%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        .product-images img:hover {
+            transform: scale(1.05);
         }
 
         .product-description h2 {
@@ -108,23 +113,6 @@
             font-weight: 600;
         }
 
-     .video-section {
-    text-align: center;
-    margin-top: 20px;
-    max-width: 300px; /* Ограничиваем максимальную ширину */
-    margin: 0 auto;  /* Центрируем */
-    padding: 10px; /* Добавляем отступы вокруг видео */
-    border: 5px solid #4B0082; /* Рамка с цветом */
-    border-radius: 15px; /* Скругленные углы */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Тень для красивого эффекта */
-    background-color: #fff; /* Белый фон внутри рамки */
-}
-
-.plyr__video-embed {
-    max-width: 100%;  /* Ограничиваем ширину до 100% родительского контейнера */
-    height: auto;     /* Высота будет пропорциональна ширине */
-    border-radius: 10px; /* Скругленные углы видео */
-}
         footer {
             background-color: #4B0082;
             color: #fff;
