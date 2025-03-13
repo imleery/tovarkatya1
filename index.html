@@ -57,20 +57,22 @@
             margin-left: -5px; /* Это сдвиг на 1 пробел влево */
         }
 
-        .product-images img {
-            width: 48%;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            border: 2px solid #ddd;
-            padding: 5px;
-            box-sizing: border-box;
-            transition: transform 0.3s ease-in-out;
-            cursor: pointer;
-        }
+       .product-images img {
+    width: 48%;
+    margin-bottom: 10px;
+    border-radius: 15px; /* Скругленные углы */
+    border: 5px solid #4B0082; /* Рамка с цветом */
+    padding: 5px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    background-color: #fff; /* Белый фон внутри рамки */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Тень для красивого эффекта */
+}
 
-        .product-images img:hover {
-            transform: scale(1.05);
-        }
+.product-images img:hover {
+    transform: scale(1.05);
+}
 
         .product-description {
             width: 35%;
