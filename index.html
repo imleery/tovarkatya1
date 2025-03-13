@@ -214,14 +214,6 @@
             cursor: pointer;
         }
 
-
-/* Добавленный стиль для смещения текста */
-   .stylish {
-    padding-left: 14.5ch; /* Отступ на 6 символов (приблизительно 6 пробелов) */
-    font-weight: bold;  /* Сделать текст жирным */
-    font-size: 110%;    /* Увеличиваем размер текста на 10% */
-}
-
         @media only screen and (max-width: 768px) {
             .product-info {
                 flex-direction: column;
@@ -309,23 +301,17 @@
                 <p class="price">Ціна: 1250 грн</p>
                 <ul>
                     <li>▪️Тканина: плащовка + стьобана підкладка з синтепоном 100+ ребана.</li>
-<br>
                     <li>▪️Кольори: рожевий, графіт, молочний, чорний.</li>
-<br>
                     <li>▪️Розмір: S-М; М-L</li>
-<br>
                     <li>▪️Параметри на S-M:</li>
-<br>
                     <li>▪️Довжина виробу: 70 см</li>
                     <li>▪️Довжина рукава: 80 см</li>
-<br>
                     <li>▪️ОГ: 126 см</li>
                     <li>▪️ОТ: 116 см</li>
                 </ul>
             </div>
 
             <div class="product-images">
-                <!-- Розовые фото -->
                 <div class="color-section">
                     <h3>Рожевий колір</h3>
                     <img src="roz1.jpg" alt="Фото 1" onclick="openModal(this)">
@@ -333,21 +319,18 @@
                     <img src="roz3.jpg" alt="Фото 3" onclick="openModal(this)">
                 </div>
 
-                <!-- Черные фото -->
                 <div class="color-section">
                     <h3>Чорний колір</h3>
                     <img src="chern1.jpg" alt="Фото 4" onclick="openModal(this)">
                     <img src="chern2.jpg" alt="Фото 5" onclick="openModal(this)">
                 </div>
 
-                <!-- Серые фото -->
                 <div class="color-section">
                     <h3>Сірий колір</h3>
                     <img src="ser1.jpg" alt="Фото 6" onclick="openModal(this)">
                     <img src="ser2.jpg" alt="Фото 7" onclick="openModal(this)">
                 </div>
 
-                <!-- Белые фото -->
                 <div class="color-section">
                     <h3>Білий колір</h3>
                     <img src="be1.jpg" alt="Фото 8" onclick="openModal(this)">
@@ -369,6 +352,18 @@
     <script src="https://cdn.jsdelivr.net/npm/plyr@3.6.9/dist/plyr.js"></script>
     <script>
         const player = new Plyr('#video');
+
+        function openModal(image) {
+            const modal = document.getElementById("myModal");
+            const modalImg = document.getElementById("img01");
+            modal.style.display = "block";
+            modalImg.src = image.src;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
     </script>
 </body>
 </html>
