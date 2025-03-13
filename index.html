@@ -11,49 +11,9 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f7f7f7;
+            background: #f7f7f7 url('https://www.transparenttextures.com/patterns/cubes.png') repeat, linear-gradient(45deg, #4B0082, #6A1B9A, #FF4081); /* Новый фон */
             color: #333;
-            font-size: 1.5rem;
-            background: linear-gradient(45deg, #dcdcdc, #f7f7f7);
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Добавлены элементы фона */
-        body::before {
-            content: "";
-            position: absolute;
-            top: 10%;
-            left: 5%;
-            width: 300px;
-            height: 300px;
-            background-color: rgba(0, 0, 0, 0.1);
-            border-radius: 50%;
-            animation: moveBackground1 15s infinite ease-in-out;
-        }
-
-        body::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 70%;
-            width: 250px;
-            height: 250px;
-            background-color: rgba(0, 0, 0, 0.1);
-            border-radius: 50%;
-            animation: moveBackground2 20s infinite ease-in-out;
-        }
-
-        @keyframes moveBackground1 {
-            0% { transform: translate(0, 0); }
-            50% { transform: translate(100px, 100px); }
-            100% { transform: translate(0, 0); }
-        }
-
-        @keyframes moveBackground2 {
-            0% { transform: translate(0, 0); }
-            50% { transform: translate(-100px, -100px); }
-            100% { transform: translate(0, 0); }
+            font-size: 1.5rem; /* Увеличиваем весь текст для лучшей читаемости */
         }
 
         header {
@@ -107,8 +67,8 @@
         .plyr__video-embed {
             max-width: 100%;
             height: auto;
-            border: 4px solid #4B0082;
-            border-radius: 10px;
+            border: 4px solid #4B0082; 
+            border-radius: 10px; 
             padding: 5px;
             margin: 10px;
             box-sizing: border-box;
@@ -210,17 +170,19 @@
             margin-bottom: 5px;
         }
 
-       .modal {
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto; /* Это нужно, чтобы страница не блокировалась */
-    background-color: rgba(0, 0, 0, 0.9);
-    padding-top: 60px;
-}
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.9);
+            padding-top: 60px;
+        }
 
         .modal-content {
             margin: auto;
@@ -254,30 +216,29 @@
 
         .stylish {
             padding-left: 14.6ch;
-            font-weight: bold;
+            font-weight: bold; /* Делаем текст жирным */
         }
         
         .video-section h2 {
-            padding-right: 7.0ch;
+            padding-right: 7.0ch; /* Сдвигает на 1 пробел */
         }
 
         .video-section {
             width: 150%;
             display: flex;
-            justify-content: center;
+            justify-content: center;  /* Центрируем видео */
             align-items: center;
-            margin-top: 27px;
+            margin-top: 27px;  /* Отступ сверху */
         }
 
-        .plyr__video-embed {
-            width: 32.5%;
-            border: 4px solid #4B0082;
-            border-radius: 10px;
-            padding: 5px;
-            margin: 10px;
-            box-sizing: border-box;
-        }
-
+       .plyr__video-embed {
+    width: 32.5%; /* Устанавливаем ширину видео в два раза меньше */
+    border: 4px solid #4B0082; /* Устанавливаем рамку */
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;
+    box-sizing: border-box;
+}
         @media only screen and (max-width: 768px) {
             .product-info {
                 flex-direction: column;
@@ -335,6 +296,7 @@
                 font-size: 1.3rem;
             }
         }
+
     </style>
 </head>
 <body>
