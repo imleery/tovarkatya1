@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Магазин Одежды</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/plyr@3.6.5/dist/plyr.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/plyr@3.6.9/dist/plyr.css" rel="stylesheet" />
     <style>
         body {
             font-family: 'Raleway', sans-serif;
@@ -109,14 +109,6 @@
         .video-section {
             text-align: center;
             margin-top: 40px;
-        }
-
-        .video-section .plyr {
-            width: 80%;
-            max-width: 600px;
-            margin-top: 20px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         footer {
@@ -228,10 +220,6 @@
                 font-size: 1.5rem;
             }
 
-            .video-section .plyr {
-                width: 90%;
-            }
-
             .price {
                 font-size: 1.2rem;
             }
@@ -287,7 +275,10 @@
         <section class="video-section">
             <h2>Видео с подробным описанием товара</h2>
             <div class="plyr__video-embed" id="player">
-                <iframe src="https://www.youtube.com/embed/vi1.mp4" allowfullscreen allowtransparency allow="autoplay"></iframe>
+                <video id="video" controls>
+                    <source src="vi1.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
             </div>
         </section>
 
@@ -343,11 +334,9 @@
         <p>&copy; 2025 Курганська Катерина Василівна</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/plyr@3.6.5/dist/plyr.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/plyr@3.6.9/dist/plyr.js"></script>
     <script>
-        const player = new Plyr('#player', {
-            autoplay: true
-        });
+        const player = new Plyr('#video');
     </script>
 </body>
 </html>
