@@ -106,10 +106,16 @@
             font-weight: 600;
         }
 
-        .video-section {
-            text-align: center;
-            margin-top: 40px;
-        }
+       .video-section {
+    text-align: center;
+    margin-top: 40px;
+    max-width: 800px; /* Ограничиваем максимальную ширину */
+    margin: 0 auto;  /* Центрируем */
+}
+.plyr__video-embed {
+    max-width: 100%;  /* Ограничиваем ширину до 100% родительского контейнера */
+    height: auto;     /* Высота будет пропорциональна ширине */
+}
 
         footer {
             background-color: #4B0082;
