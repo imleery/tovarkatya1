@@ -66,11 +66,6 @@
         .plyr__video-embed {
             max-width: 100%;
             height: auto;
-            border: 4px solid #4B0082; /* Фиолетовая рамка */
-            border-radius: 10px; /* Закругление углов */
-            padding: 5px; /* Отступ внутри рамки */
-            margin: 10px; /* Отступ между элементами */
-            box-sizing: border-box; /* Чтобы отступы и рамки не влияли на размеры */
         }
 
         .product-images {
@@ -82,8 +77,8 @@
         .product-images img {
             width: 48%;
             margin-bottom: 10px;
-            border-radius: 10px;
-            border: 4px solid #4B0082; /* Фиолетовая рамка */
+            border-radius: 8px;
+            border: 2px solid #ddd;
             padding: 5px;
             box-sizing: border-box;
             transition: transform 0.3s ease-in-out;
@@ -268,6 +263,16 @@
             font-size: 2rem;
             font-weight: bold;
         }
+
+        /* Новое правило для последнего изображения */
+        .product-images img.last-image {
+            width: 100%;
+            margin-bottom: 0;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
     </style>
 </head>
 <body>
@@ -316,7 +321,7 @@
                 <img src="chern2.jpg" alt="Фото 6" onclick="openModal(this)">
                 <img src="roz1.jpg" alt="Фото 7" onclick="openModal(this)">
                 <img src="roz2.jpg" alt="Фото 8" onclick="openModal(this)">
-                <img src="roz3.jpg" alt="Фото 9" onclick="openModal(this)">
+                <img src="roz3.jpg" alt="Фото 9" class="last-image" onclick="openModal(this)">
             </div>
         </section>
     </div>
