@@ -106,17 +106,23 @@
             font-weight: 600;
         }
 
-       .video-section {
+     .video-section {
     text-align: center;
     margin-top: 20px;
     max-width: 300px; /* Ограничиваем максимальную ширину */
     margin: 0 auto;  /* Центрируем */
+    padding: 10px; /* Добавляем отступы вокруг видео */
+    border: 5px solid #4B0082; /* Рамка с цветом */
+    border-radius: 15px; /* Скругленные углы */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Тень для красивого эффекта */
+    background-color: #fff; /* Белый фон внутри рамки */
 }
+
 .plyr__video-embed {
     max-width: 100%;  /* Ограничиваем ширину до 100% родительского контейнера */
     height: auto;     /* Высота будет пропорциональна ширине */
+    border-radius: 10px; /* Скругленные углы видео */
 }
-
         footer {
             background-color: #4B0082;
             color: #fff;
