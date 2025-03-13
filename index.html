@@ -265,14 +265,18 @@
         }
 
         /* Новое правило для последнего изображения */
-        .product-images img.last-image {
-            width: 100%;
-            margin-bottom: 0;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
+        .product-images .last-image {
+            width: 48%;  /* Размер такого же размера, как у всех изображений */
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border: 2px solid #ddd;
+            padding: 5px;
+            box-sizing: border-box;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+            margin-left: 0; /* Чтобы не было дополнительного отступа */
+            margin-right: 0; /* И справа тоже */
         }
-
     </style>
 </head>
 <body>
@@ -321,23 +325,30 @@
                 <img src="chern2.jpg" alt="Фото 6" onclick="openModal(this)">
                 <img src="roz1.jpg" alt="Фото 7" onclick="openModal(this)">
                 <img src="roz2.jpg" alt="Фото 8" onclick="openModal(this)">
-                <img src="roz3.jpg" alt="Фото 9" class="last-image" onclick="openModal(this)">
+                <img class="last-image" src="roz3.jpg" alt="Фото 9" onclick="openModal(this)">
             </div>
         </section>
     </div>
 
-    <div id="myModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="img01">
-    </div>
-
     <footer>
-        <p>&copy; 2025 Курганська Катерина Василівна</p>
+        <p>&copy; 2025 Магазин Одежды. Все права защищены.</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/plyr@3.6.9/dist/plyr.js"></script>
     <script>
-        const player = new Plyr('#video');
+        function openModal(image) {
+            var modal = document.createElement("div");
+            modal.className = "modal";
+            var modalContent = document.createElement("img");
+            modalContent.className = "modal-content";
+            modalContent.src = image.src;
+            modal.appendChild(modalContent);
+            document.body.appendChild(modal);
+
+            modal.onclick = function() {
+                modal.style.display = "none";
+            };
+        }
     </script>
+
 </body>
 </html>
