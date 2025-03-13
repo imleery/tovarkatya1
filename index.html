@@ -273,13 +273,15 @@
         }
 
         /* Новый стиль для текста "Стильна новинка" */
-        .stylish {
-            font-weight: bold;
-            text-align: center;
-            font-size: 2.5rem;
-            color: #4B0082;
-            margin-bottom: 20px;
-        }
+       .stylish {
+    font-weight: bold;
+    text-align: center;  /* Это уже есть, но важно убедиться, что элемент растягивается */
+    font-size: 2.5rem;
+    color: #4B0082;
+    margin-bottom: 20px;
+    width: 100%;  /* Добавлено, чтобы текст занимал всю доступную ширину */
+    display: block; /* Убедитесь, что это блочный элемент */
+}
 
     </style>
 </head>
