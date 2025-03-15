@@ -85,41 +85,15 @@
 
         @media only screen and (max-width: 768px) {
             .plyr__video-embed {
-                width: 90%;
+                width: calc(60% * 1.15);
                 height: auto;
             }
         }
 
-        @media only screen and (max-width: 480px) {
-            header h1 {
-                font-size: 2.2rem;
-            }
-
-            .product-description h2 {
-                font-size: 1.3rem;
-            }
-
-            .product-description p {
-                font-size: 1rem;
-                padding-left: 10ch;
-            }
-
-            .product-description span {
-                font-size: 1.1rem;
-            }
-
-            .sticker {
-                font-size: 1.3rem;
-            }
-
-            .price {
-                font-size: 1.3rem;
-            }
-
-            .btn {
-                font-size: 1.3rem;
-                padding: 8px 14px;
-                width: 130px;
+        @media screen and (min-width: 768px) {
+            .plyr__video-embed {
+                width: calc(60% / 1.6);
+                height: auto;
             }
         }
 
@@ -188,7 +162,6 @@
         .product-description ul {
             list-style-type: none;
             padding-left: 0;
-            margin-left: 20px; /* Сдвиг на 20px (примерно 5 пробелов) */
         }
 
         .product-description ul li {
@@ -302,6 +275,7 @@
         }
 
         .stylish {
+            margin-left: 46.5ch;
             font-size: 3rem;
             font-weight: bold;
             text-align: center;
@@ -318,7 +292,7 @@
             }
 
             .product-images img {
-                width: 80%;
+                width: 60%;
                 margin-bottom: 15px;
             }
 
@@ -337,6 +311,47 @@
             .modal-content {
                 width: 90%;
             }
+        }
+
+        @media only screen and (max-width: 480px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            .product-description h2 {
+                font-size: 1.3rem;
+            }
+
+            .product-description p {
+                font-size: 1rem;
+                padding-left: 10ch;
+            }
+
+            .product-description span {
+                font-size: 1.1rem;
+            }
+
+            .sticker {
+                font-size: 1.3rem;
+            }
+
+            .price {
+                font-size: 1.3rem;
+            }
+
+            .btn {
+                font-size: 1.3rem;
+                padding: 8px 14px;
+                width: 130px;
+            }
+        }
+
+        footer {
+            background-color: #4B0082;
+            color: #fff;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
         }
     </style>
 </head>
@@ -360,7 +375,7 @@
                    <li><p>Горловина, манжети та пояс з ребани в колір. Підкладка простьобана з синтепоном.</p></li>
                 </ul>
                 <ul>
-                    <li▪️Тканина: плащовка + стьобана підкладка з синтепоном 100+ ребана.</li>
+                    <li>▪️Тканина: плащовка + стьобана підкладка з синтепоном 100+ ребана.</li>
                     <li>▪️Кольори: рожевий, графіт, молочний, чорний.</li>
                     <li>▪️Розмір: S-М; М-L</li>
                     <li>▪️Параметри на S-M:</li>
