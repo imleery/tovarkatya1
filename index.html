@@ -12,9 +12,6 @@
             padding: 0;
             width: 100%;
             overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
         }
 
         body {
@@ -22,7 +19,12 @@
             background-color: #f7f7f7;
             color: #333;
             font-size: 1.5rem;
-            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
         }
 
         header {
@@ -206,17 +208,17 @@
             text-align: center;
             font-weight: 700;
             font-size: 1.4rem;
-            text-decoration: none;
-            box-shadow: 0 0 15px rgba(75, 0, 130, 0.7);
+            text-decoration: none; /* Убираем подчеркивание */
+            box-shadow: 0 0 15px rgba(75, 0, 130, 0.7); /* Свечение кнопки */
         }
 
         .btn:hover {
             background-color: #3a006f;
-            box-shadow: 0 0 25px 5px rgba(75, 0, 130, 0.8);
+            box-shadow: 0 0 25px 5px rgba(75, 0, 130, 0.8); /* Усиление свечения при наведении */
         }
 
         .btn:active {
-            box-shadow: 0 0 30px 10px rgba(75, 0, 130, 0.9);
+            box-shadow: 0 0 30px 10px rgba(75, 0, 130, 0.9); /* Усиление свечения при клике */
         }
 
         .btn-section {
@@ -283,47 +285,49 @@
             text-align: center;
         }
 
-        @media only screen and (max-width: 768px) {
-            .container {
-                padding-left: 20px;
-                padding-right: 20px;
-            }
+      <style>
+    /* Ваши текущие стили... */
 
-            .product-description {
-                text-align: center;
-                padding-left: 0;
-                padding-right: 0;
-            }
-
-            .product-description h2 {
-                font-size: 1.6rem;
-            }
-
-            .price {
-                font-size: 1.4rem;
-            }
-
-            .stylish {
-                margin-left: 0;
-                font-size: 2rem;
-            }
-
-            .product-images {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .product-images img {
-                width: 80%;
-                margin-bottom: 15px;
-            }
-
-            .modal-content {
-                width: 90%;
-            }
+    @media only screen and (max-width: 768px) {
+        .container {
+            padding-left: 20px;
+            padding-right: 20px; /* добавляем паддинг для мобильных устройств */
         }
 
-        footer {
+        .product-description {
+            text-align: center; /* гарантирует, что текст будет по центру */
+            padding-left: 0; /* убираем дополнительные отступы */
+            padding-right: 0; /* убираем дополнительные отступы */
+        }
+
+        .product-description h2 {
+            font-size: 1.6rem;
+        }
+
+        .price {
+            font-size: 1.4rem;
+        }
+
+        .stylish {
+            margin-left: 0; /* убираем смещение на мобильных устройствах */
+            font-size: 2rem; /* уменьшаем размер шрифта для мобильных */
+        }
+
+        .product-images {
+            flex-direction: column;
+            align-items: center; /* выравниваем изображения по центру */
+        }
+
+        .product-images img {
+            width: 80%; /* уменьшаем ширину изображений на мобильных устройствах */
+            margin-bottom: 15px; /* добавляем пространство между картинками */
+        }
+
+        .modal-content {
+            width: 90%; /* для мобильных устройств делаем модальное окно более узким */
+        }
+    }
+footer {
             background-color: #4B0082;
             color: white;
             text-align: center;
@@ -336,8 +340,9 @@
             margin: 0;
             font-size: 1rem;
         }
+</style>
 
-    </style>
+  </style>
 </head>
 <body>
 
