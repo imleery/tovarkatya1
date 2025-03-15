@@ -70,19 +70,18 @@
             margin-bottom: 30px;
         }
 
-    .plyr__video-embed {
-    width: 33.33%;  /* Уменьшаем видео в 3 раза */
-    height: auto;   /* Сохраняем пропорции */
-    border: 4px solid #4B0082;
-    border-radius: 10px;
-    padding: 5px;
-    margin: 10px;
-    box-sizing: border-box;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
+        .plyr__video-embed {
+            width: 40%;
+            height: auto;
+            border: 4px solid #4B0082;
+            border-radius: 10px;
+            padding: 5px;
+            margin: 10px;
+            box-sizing: border-box;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
         .product-images {
             display: flex;
@@ -265,14 +264,14 @@
             text-decoration: none;
             cursor: pointer;
         }
-/* Медиазапрос для мобильных устройств */
-@media only screen and (max-width: 768px) {
-    .plyr__video-embed {
-        width: 80%;  /* Увеличиваем видео на 80% на экранах меньше 768px */
-        max-width: 100%;  /* Ограничиваем максимальную ширину */
-        margin: 20px auto;  /* Центрируем видео */
-    }
-}            .product-images img {
+
+        @media only screen and (max-width: 768px) {
+            .product-images {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product-images img {
                 width: 60%;
                 margin-bottom: 15px;
             }
