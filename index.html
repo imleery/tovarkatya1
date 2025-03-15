@@ -70,17 +70,22 @@
             margin-bottom: 30px;
         }
 
+        .plyr__video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 соотношение сторон */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+        }
+
         .plyr__video-embed {
-            width: 40%;
-            height: auto;
-            border: 4px solid #4B0082;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             border-radius: 10px;
-            padding: 5px;
-            margin: 10px;
-            box-sizing: border-box;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .product-images {
@@ -259,92 +264,114 @@
             cursor: pointer;
         }
 
-      /* Адаптивные стили для мобильных устройств */
-@media only screen and (max-width: 768px) {
-    .product-images {
-        flex-direction: column;
-        align-items: center;
-    }
+        /* Адаптивные стили для мобильных устройств */
+        @media only screen and (max-width: 768px) {
+            .product-images {
+                flex-direction: column;
+                align-items: center;
+            }
 
-    .product-images img {
-        width: 70%;
-        margin-bottom: 15px;
-    }
+            .product-images img {
+                width: 70%;
+                margin-bottom: 15px;
+            }
 
-    .product-description {
-        width: 90%;
-    }
+            .product-description {
+                width: 90%;
+            }
 
-    .product-description h2 {
-        font-size: 1.6rem;
-    }
+            .product-description h2 {
+                font-size: 1.6rem;
+            }
 
-    .price {
-        font-size: 1.4rem;
-    }
+            .price {
+                font-size: 1.4rem;
+            }
 
-    .modal-content {
-        width: 90%;
-    }
+            .modal-content {
+                width: 90%;
+            }
 
-    .btn {
-        width: 100px;
-        font-size: 1.4rem;
-        padding: 7px 14px;
-    }
+            .btn {
+                width: 100px;
+                font-size: 1.4rem;
+                padding: 7px 14px;
+            }
 
-    /* Обновляем правила для видео */
-    .plyr__video-embed {
-        width: 100%; /* Устанавливаем ширину видео на 100% */
-        height: auto;
-        max-width: 100%; /* Видео не выходит за пределы контейнера */
-        border-radius: 10px; /* Сохраняем скругления углов */
-    }
-}
+            /* Обновляем правила для видео для мобильных */
+            .plyr__video-container {
+                position: relative;
+                width: 100%;
+                padding-bottom: 177.77%; /* Это 9:16 соотношение сторон для мобильных */
+                height: 0;
+                overflow: hidden;
+                max-width: 100%;
+            }
 
-@media only screen and (max-width: 480px) {
-    header h1 {
-        font-size: 2.2rem;
-    }
+            .plyr__video-embed {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+            }
+        }
 
-    .product-description h2 {
-        font-size: 1.3rem;
-    }
+        @media only screen and (max-width: 480px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
 
-    .product-description p {
-        font-size: 1rem;
-    }
+            .product-description h2 {
+                font-size: 1.3rem;
+            }
 
-    .product-description span {
-        font-size: 1.1rem;
-    }
+            .product-description p {
+                font-size: 1rem;
+            }
 
-    .sticker {
-        font-size: 1.3rem;
-    }
+            .product-description span {
+                font-size: 1.1rem;
+            }
 
-    .price {
-        font-size: 1.3rem;
-    }
+            .sticker {
+                font-size: 1.3rem;
+            }
 
-    .product-images img {
-        width: 80%; /* Уменьшаем изображения на мобильных */
-    }
+            .price {
+                font-size: 1.3rem;
+            }
 
-    .btn {
-        width: 90px;
-        font-size: 1.3rem;
-        padding: 6px 12px;
-    }
+            .product-images img {
+                width: 80%; /* Уменьшаем изображения на мобильных */
+            }
 
-    /* Еще больше адаптации для видео */
-    .plyr__video-embed {
-        width: 100%; /* Устанавливаем видео на всю ширину */
-        height: auto; 
-        max-width: 100%;
-        border-radius: 10px;
-    }
-}
+            .btn {
+                width: 90px;
+                font-size: 1.3rem;
+                padding: 6px 12px;
+            }
+
+            /* Еще больше адаптации для видео */
+            .plyr__video-container {
+                position: relative;
+                width: 100%;
+                padding-bottom: 177.77%; /* Это 9:16 соотношение сторон для мобильных */
+                height: 0;
+                overflow: hidden;
+                max-width: 100%;
+            }
+
+            .plyr__video-embed {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -359,108 +386,18 @@
             <div class="product-description">
                 <p class="stylish">Стильна новинка</p>
                 <span class="sticker">🔥ФОТО РЕАЛ🔥</span>
-                <p>Бомбер - найнеобхідніша річ у вашому весняному гардеробі. Обʼємний як на фото, якісна тканина та фурнітура, на рукаві також блискавка. Горловина, манжети та пояс з ребани в колір. Підкладка простьобана з синтепоном.</p>
-                <h3>Бомбер</h3>
-                <div class="price-section">
-                    <p class="price">Ціна: 1250 грн</p>
-                    <button class="btn">Купити</button>
-                </div>
-                <ul>
-                    <li>▪️Тканина: плащовка + стьобана підкладка з синтепоном 100+ ребана.</li>
-                    <li>▪️Кольори: рожевий, графіт, молочний, чорний.</li>
-                    <li>▪️Розмір: S-М; М-L</li>
-                    <li>▪️Параметри на S-M:</li>
-                    <li>▪️Довжина виробу: 70 см</li>
-                    <li>▪️Довжина рукава: 80 см</li>
-                    <li>▪️ОГ: 126 см</li>
-                    <li>▪️ОТ: 116 см</li>
-                </ul>
-            </div>
-
-            <div class="plyr__video-embed" id="player">
-                <video id="video" controls>
-                    <source src="vi1.mp4" type="video/mp4">
-                    Ваш браузер не поддерживает видео.
-                </video>
-            </div>
-
-            <div class="product-images">
-                <div class="color-section">
-                    <h3>Рожевий колір</h3>
-                    <div class="photo-wrapper">
-                        <img src="roz1.jpg" alt="Фото 1" onclick="openModal(this)">
-                        <img src="roz2.jpg" alt="Фото 2" onclick="openModal(this)">
-                        <img src="roz3.jpg" alt="Фото 3" onclick="openModal(this)">
-                    </div>
-                    <div class="btn-section">
-                        <span>1250 грн</span>
-                        <button class="btn">Купити</button>
-                    </div>
-                </div>
-
-                <div class="color-section">
-                    <h3>Чорний колір</h3>
-                    <div class="photo-wrapper">
-                        <img src="chern1.jpg" alt="Фото 4" onclick="openModal(this)">
-                        <img src="chern2.jpg" alt="Фото 5" onclick="openModal(this)">
-                    </div>
-                    <div class="btn-section">
-                        <span>1250 грн</span>
-                        <button class="btn">Купити</button>
-                    </div>
-                </div>
-
-                <div class="color-section">
-                    <h3>Сірий колір</h3>
-                    <div class="photo-wrapper">
-                        <img src="ser1.jpg" alt="Фото 6" onclick="openModal(this)">
-                        <img src="ser2.jpg" alt="Фото 7" onclick="openModal(this)">
-                    </div>
-                    <div class="btn-section">
-                        <span>1250 грн</span>
-                        <button class="btn">Купити</button>
-                    </div>
-                </div>
-
-                <div class="color-section">
-                    <h3>Білий колір</h3>
-                    <div class="photo-wrapper">
-                        <img src="be1.jpg" alt="Фото 8" onclick="openModal(this)">
-                        <img src="be2.jpg" alt="Фото 9" onclick="openModal(this)">
-                    </div>
-                    <div class="btn-section">
-                        <span>1250 грн</span>
-                        <button class="btn">Купити</button>
-                    </div>
-                </div>
+                <p>Бомбер - найнеобхідніша річ у вашому весняному гардеробі. Обʼємний як на фото, якісна тканина та фурнітура, на рукаві також блискавка. Горловина...</p>
             </div>
         </section>
+
+        <!-- Видео блок -->
+        <section class="plyr__video-container">
+            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="plyr__video-embed"></iframe>
+        </section>
+
+        <!-- Прочие элементы... -->
+
     </div>
 
-    <div id="myModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="img01">
-    </div>
-
-    <footer>
-        <p>&copy; 2025 Курганська Катерина Василівна</p>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/plyr@3.6.9/dist/plyr.js"></script>
-    <script>
-        const player = new Plyr('#video');
-
-        function openModal(image) {
-            const modal = document.getElementById("myModal");
-            const modalImg = document.getElementById("img01");
-            modal.style.display = "block";
-            modalImg.src = image.src;
-        }
-
-        function closeModal() {
-            const modal = document.getElementById("myModal");
-            modal.style.display = "none";
-        }
-    </script>
 </body>
 </html>
