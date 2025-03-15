@@ -11,7 +11,7 @@
             margin: 0;
             padding: 0;
             width: 100%;
-            overflow-x: hidden; /* Убирает горизонтальную прокрутку */
+            overflow-x: hidden;
         }
 
         body {
@@ -43,7 +43,7 @@
         }
 
         header p {
-            font-size: 1.26rem; /* Уменьшаем размер на 10% от 1.4rem */
+            font-size: 1.26rem;
         }
 
         .container {
@@ -71,7 +71,7 @@
         }
 
         .plyr__video-embed {
-            width: 60%; /* Изменено на мобильных устройствах */
+            width: 60%;
             height: auto;
             border: 4px solid #4B0082;
             border-radius: 10px;
@@ -83,18 +83,16 @@
             margin-right: auto;
         }
 
-        /* Медиазапрос для увеличения видео на телефонах */
         @media only screen and (max-width: 768px) {
             .plyr__video-embed {
-                width: calc(60% * 1.15); /* Увеличиваем видео на 15% */
+                width: calc(60% * 1.15);
                 height: auto;
             }
         }
 
-        /* Медиазапрос для уменьшения видео на десктопах */
         @media screen and (min-width: 768px) {
             .plyr__video-embed {
-                width: calc(60% / 1.6); /* Уменьшаем видео в 1.6 раза */
+                width: calc(60% / 1.6);
                 height: auto;
             }
         }
@@ -204,16 +202,21 @@
             border-radius: 5px;
             border: none;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, box-shadow 0.3s;
             margin-top: 10px;
-            width: 150px; /* Увеличена ширина кнопки */
+            width: 150px;
             text-align: center;
             font-weight: 700;
-            font-size: 1.4rem; /* Уменьшен размер текста */
+            font-size: 1.4rem;
         }
 
         .btn:hover {
             background-color: #3a006f;
+            box-shadow: 0 0 15px 5px rgba(75, 0, 130, 0.8);
+        }
+
+        .btn:active {
+            box-shadow: 0 0 20px 10px rgba(75, 0, 130, 0.6);
         }
 
         .btn-section {
@@ -270,14 +273,14 @@
         }
 
         .stylish {
-            margin-left: 46.5ch; /* сдвигает текст на 10 символов */
-            font-size: 3rem; /* Увеличиваем размер шрифта в два раза */
-            font-weight: bold; /* Делаем шрифт жирным */
-            text-align: center; /* Выравниваем текст по центру */
+            margin-left: 46.5ch;
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
         }
 
-        .product-description ul {
-            text-align: center; /* Выравниваем текст по центру для списка */
+        .product-description ul li p {
+            text-align: center;
         }
 
         @media only screen and (max-width: 768px) {
@@ -319,7 +322,7 @@
 
             .product-description p {
                 font-size: 1rem;
-                padding-left: 10ch; /* 10 символов пробела */
+                padding-left: 10ch;
             }
 
             .product-description span {
@@ -337,11 +340,10 @@
             .btn {
                 font-size: 1.3rem;
                 padding: 8px 14px;
-                width: 130px; /* Уменьшен размер кнопки для мобильных */
+                width: 130px;
             }
         }
 
-        /* Добавляем фиолетовый фон для футера */
         footer {
             background-color: #4B0082;
             color: #fff;
@@ -369,7 +371,6 @@
                    <li><p style="text-align: center;">Бомбер - найнеобхідніша річ у вашому весняному гардеробі.</p></li>
                    <li><p style="text-align: center;">Обʼємний як на фото, якісна тканина та фурнітура, на рукаві також блискавка.</p></li>
                    <li><p style="text-align: center;">Горловина, манжети та пояс з ребани в колір. Підкладка простьобана з синтепоном.</p></li>
-
                 </ul>
                 <ul>
                     <li>▪️Тканина: плащовка + стьобана підкладка з синтепоном 100+ ребана.</li>
