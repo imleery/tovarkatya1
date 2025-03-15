@@ -83,10 +83,18 @@
             margin-right: auto;
         }
 
-        /* Медиазапрос для увеличения видео на 5% на телефонах */
+        /* Медиазапрос для увеличения видео на телефонах */
         @media only screen and (max-width: 768px) {
             .plyr__video-embed {
-                width: calc(60% * 1.05); /* Увеличиваем видео на 5% */
+                width: calc(60% * 1.15); /* Увеличиваем видео на 15% */
+                height: auto;
+            }
+        }
+
+        /* Медиазапрос для уменьшения видео на десктопах */
+        @media screen and (min-width: 768px) {
+            .plyr__video-embed {
+                width: calc(60% / 1.6); /* Уменьшаем видео в 1.6 раза */
                 height: auto;
             }
         }
