@@ -125,12 +125,6 @@
             margin-bottom: 30px;
         }
 
-        .product-description {
-            width: 100%;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
         .product-description h2 {
             font-size: 2.5rem;
             color: #4B0082;
@@ -265,6 +259,7 @@
             cursor: pointer;
         }
 
+        /* Адаптивные стили для мобильных устройств */
         @media only screen and (max-width: 768px) {
             .product-images {
                 flex-direction: column;
@@ -296,6 +291,13 @@
                 width: 100px; /* Уменьшаем кнопку на мобильных */
                 font-size: 1.4rem;
                 padding: 7px 14px;
+            }
+
+            /* Добавляем правила для видео на мобильных устройствах */
+            .plyr__video-embed {
+                width: 80%; /* Снижаем ширину видео */
+                height: auto;
+                max-width: 100%; /* Видео не выходит за пределы контейнера */
             }
         }
 
@@ -332,6 +334,11 @@
                 width: 90px; /* Еще больше уменьшаем кнопку */
                 font-size: 1.3rem;
                 padding: 6px 12px;
+            }
+
+            /* Добавляем еще больше адаптации для видео */
+            .plyr__video-embed {
+                width: 90%; /* Видео будет занимать 90% от ширины контейнера */
             }
         }
     </style>
