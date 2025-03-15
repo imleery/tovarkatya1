@@ -15,8 +15,9 @@
             color: #333;
             font-size: 1.5rem;
             display: flex;
-            justify-content: center;
-            align-items: flex-start;
+            flex-direction: column;
+            justify-content: flex-start; /* Сначала сверху */
+            align-items: center; /* Центрируем по горизонтали */
             min-height: 100vh;
             text-align: center;
         }
@@ -45,6 +46,9 @@
             max-width: 1200px;
             padding: 20px;
             margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .product-info {
@@ -64,8 +68,8 @@
         .plyr__video-embed {
             width: 80%;
             height: auto;
-            border: 4px solid #4B0082; 
-            border-radius: 10px; 
+            border: 4px solid #4B0082;
+            border-radius: 10px;
             padding: 5px;
             margin: 10px;
             box-sizing: border-box;
@@ -73,10 +77,10 @@
 
         .product-images {
             display: flex;
-            justify-content: space-between;
             flex-wrap: wrap;
             gap: 15px;
             width: 100%;
+            justify-content: center;
             margin-top: 40px;
         }
 
