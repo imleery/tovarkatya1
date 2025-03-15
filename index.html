@@ -77,11 +77,18 @@
             box-sizing: border-box;
         }
 
+        .product-images {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            gap: 15px;
+            justify-content: flex-start;
+            margin-bottom: 30px;
+        }
+
         .product-images img {
-            width: 100%; /* Уменьшена ширина изображений */
-            max-width: 200px; /* Установим максимальную ширину */
+            width: 200px; /* Установим фиксированную ширину */
             height: auto; /* Высота будет автоматически пропорциональна ширине */
-            margin-bottom: 10px;
             border-radius: 10px;
             border: 4px solid #4B0082;
             padding: 5px;
