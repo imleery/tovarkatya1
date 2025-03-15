@@ -78,12 +78,31 @@
         }
 
         .product-images {
+            width: 100%;
             display: flex;
-            flex-wrap: nowrap;
-            overflow-x: auto;
-            gap: 15px;
-            justify-content: flex-start;
+            flex-direction: column;
             margin-bottom: 30px;
+        }
+
+        .product-images .color-section {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+        }
+
+        .product-images .color-section h3 {
+            font-size: 1.8rem;
+            color: #4B0082;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .product-images .photo-wrapper {
+            display: flex;
+            justify-content: flex-start;
+            gap: 15px;
+            flex-wrap: nowrap;
+            margin-bottom: 20px;
         }
 
         .product-images img {
@@ -217,42 +236,6 @@
 
         .product-description .btn:hover {
             background-color: #3a006f;
-        }
-
-        .product-images .color-section {
-            margin-bottom: 30px;
-            width: 100%;
-        }
-
-        .product-images .color-section h3 {
-            font-size: 1.8rem;
-            color: #4B0082;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .product-images .photo-wrapper {
-            display: flex;
-            justify-content: flex-start;
-            gap: 15px;
-            flex-wrap: nowrap;
-        }
-
-        .product-images .color-section .btn-section {
-            margin-top: 10px;
-            text-align: center;
-        }
-
-        .product-images .color-section .btn-section .btn {
-            font-size: 1.3rem;
-            margin-right: 20px;
-        }
-
-        .product-images .color-section .btn-section span {
-            font-size: 1.3rem;
-            color: #FF6F61;
-            font-weight: 700;
-            margin-right: 20px;
         }
 
         @media only screen and (max-width: 768px) {
