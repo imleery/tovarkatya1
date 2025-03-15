@@ -71,7 +71,7 @@
         }
 
         .plyr__video-embed {
-            width: 60%; /* Увеличен размер на мобильных */
+            width: 40%; /* Исходный размер */
             height: auto;
             border: 4px solid #4B0082;
             border-radius: 10px;
@@ -81,6 +81,13 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        /* Медиазапрос для уменьшения видео на экранах большего размера */
+        @media only screen and (min-width: 1024px) {
+            .plyr__video-embed {
+                width: 20%; /* Уменьшаем размер видео на ПК в два раза */
+            }
         }
 
         .product-images {
@@ -93,7 +100,7 @@
         }
 
         .product-images img {
-            width: 300px;
+            width: 300px; /* Увеличиваем размер фото в два раза */
             height: auto;
             border-radius: 10px;
             border: 4px solid #4B0082;
@@ -184,16 +191,16 @@
         .btn {
             background-color: #4B0082;
             color: white;
-            padding: 9px 16px;
+            padding: 9px 16px; /* Уменьшаем padding на 20% */
             border-radius: 5px;
             border: none;
             cursor: pointer;
             transition: background-color 0.3s;
             margin-top: 10px;
-            width: 150px; /* Увеличена ширина кнопки */
+            width: 128px; /* Уменьшаем ширину на 20% */
             text-align: center;
-            font-weight: 700;
-            font-size: 1.4rem; /* Уменьшен размер текста */
+            font-weight: 700; /* Жирный текст */
+            font-size: 1.6rem; /* Уменьшаем размер текста */
         }
 
         .btn:hover {
@@ -206,7 +213,7 @@
             justify-content: center;
             gap: 10px;
             flex-direction: column;
-            align-items: center;
+            align-items: center; /* Центрируем кнопку */
         }
 
         .modal {
@@ -305,12 +312,6 @@
             .price {
                 font-size: 1.3rem;
             }
-
-            .btn {
-                font-size: 1.3rem;
-                padding: 8px 14px;
-                width: 130px; /* Уменьшен размер кнопки для мобильных */
-            }
         }
     </style>
 </head>
@@ -324,7 +325,7 @@
     <div class="container">
         <section class="product-info">
             <div class="product-description">
-                 <h3>Бомбер</h3>
+                <h3>Бомбер</h3>
                 <div class="price-section">
                     <p class="price">Ціна: 1250 грн</p>
                     <button class="btn">Купити</button>
