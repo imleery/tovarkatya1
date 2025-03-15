@@ -71,7 +71,7 @@
         }
 
         .plyr__video-embed {
-            width: 40%;
+            width: 60%; /* Увеличен размер на мобильных */
             height: auto;
             border: 4px solid #4B0082;
             border-radius: 10px;
@@ -93,7 +93,7 @@
         }
 
         .product-images img {
-            width: 300px; /* Увеличиваем размер фото в два раза */
+            width: 300px;
             height: auto;
             border-radius: 10px;
             border: 4px solid #4B0082;
@@ -117,18 +117,6 @@
             color: #4B0082;
             font-weight: 600;
             margin-bottom: 15px;
-        }
-
-        .product-description {
-            width: 100%;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .product-description {
-            width: 100%;
-            text-align: center;
-            margin-bottom: 30px;
         }
 
         .product-description h2 {
@@ -196,16 +184,16 @@
         .btn {
             background-color: #4B0082;
             color: white;
-            padding: 9px 16px; /* Уменьшаем padding на 20% */
+            padding: 9px 16px;
             border-radius: 5px;
             border: none;
             cursor: pointer;
             transition: background-color 0.3s;
             margin-top: 10px;
-            width: 128px; /* Уменьшаем ширину на 20% */
+            width: 150px; /* Увеличена ширина кнопки */
             text-align: center;
-            font-weight: 700; /* Жирный текст */
-            font-size: 1.6rem; /* Уменьшаем размер текста */
+            font-weight: 700;
+            font-size: 1.4rem; /* Уменьшен размер текста */
         }
 
         .btn:hover {
@@ -218,7 +206,7 @@
             justify-content: center;
             gap: 10px;
             flex-direction: column;
-            align-items: center; /* Центрируем кнопку */
+            align-items: center;
         }
 
         .modal {
@@ -317,6 +305,12 @@
             .price {
                 font-size: 1.3rem;
             }
+
+            .btn {
+                font-size: 1.3rem;
+                padding: 8px 14px;
+                width: 130px; /* Уменьшен размер кнопки для мобильных */
+            }
         }
     </style>
 </head>
@@ -335,9 +329,6 @@
                     <p class="price">Ціна: 1250 грн</p>
                     <button class="btn">Купити</button>
                 </div>
-<div class="container">
-        <section class="product-info">
-            <div class="product-description">
                 <p class="stylish">Стильна новинка</p>
                 <span class="sticker">🔥ФОТО РЕАЛ🔥</span>
                 <p>Бомбер - найнеобхідніша річ у вашому весняному гардеробі. Обʼємний як на фото, якісна тканина та фурнітура, на рукаві також блискавка. Горловина, манжети та пояс з ребани в колір. Підкладка простьобана з синтепоном.</p>
