@@ -12,6 +12,9 @@
             padding: 0;
             width: 100%;
             overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         body {
@@ -19,12 +22,7 @@
             background-color: #f7f7f7;
             color: #333;
             font-size: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            min-height: 100vh;
-            text-align: center;
+            flex-grow: 1;
         }
 
         header {
@@ -208,17 +206,17 @@
             text-align: center;
             font-weight: 700;
             font-size: 1.4rem;
-            text-decoration: none; /* Убираем подчеркивание */
-            box-shadow: 0 0 15px rgba(75, 0, 130, 0.7); /* Свечение кнопки */
+            text-decoration: none;
+            box-shadow: 0 0 15px rgba(75, 0, 130, 0.7);
         }
 
         .btn:hover {
             background-color: #3a006f;
-            box-shadow: 0 0 25px 5px rgba(75, 0, 130, 0.8); /* Усиление свечения при наведении */
+            box-shadow: 0 0 25px 5px rgba(75, 0, 130, 0.8);
         }
 
         .btn:active {
-            box-shadow: 0 0 30px 10px rgba(75, 0, 130, 0.9); /* Усиление свечения при клике */
+            box-shadow: 0 0 30px 10px rgba(75, 0, 130, 0.9);
         }
 
         .btn-section {
@@ -288,13 +286,13 @@
         @media only screen and (max-width: 768px) {
             .container {
                 padding-left: 20px;
-                padding-right: 20px; /* добавляем паддинг для мобильных устройств */
+                padding-right: 20px;
             }
 
             .product-description {
-                text-align: center; /* гарантирует, что текст будет по центру */
-                padding-left: 0; /* убираем дополнительные отступы */
-                padding-right: 0; /* убираем дополнительные отступы */
+                text-align: center;
+                padding-left: 0;
+                padding-right: 0;
             }
 
             .product-description h2 {
@@ -306,24 +304,39 @@
             }
 
             .stylish {
-                margin-left: 0; /* убираем смещение на мобильных устройствах */
-                font-size: 2rem; /* уменьшаем размер шрифта для мобильных */
+                margin-left: 0;
+                font-size: 2rem;
             }
 
             .product-images {
                 flex-direction: column;
-                align-items: center; /* выравниваем изображения по центру */
+                align-items: center;
             }
 
             .product-images img {
-                width: 80%; /* уменьшаем ширину изображений на мобильных устройствах */
-                margin-bottom: 15px; /* добавляем пространство между картинками */
+                width: 80%;
+                margin-bottom: 15px;
             }
 
             .modal-content {
-                width: 90%; /* для мобильных устройств делаем модальное окно более узким */
+                width: 90%;
             }
         }
+
+        footer {
+            background-color: #4B0082;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: auto;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
     </style>
 </head>
 <body>
