@@ -285,33 +285,49 @@
             text-align: center;
         }
 
-        @media only screen and (max-width: 768px) {
-            .product-images {
-                flex-direction: column;
-                align-items: center;
-            }
+      <style>
+    /* Ваши текущие стили... */
 
-            .product-images img {
-                width: 60%;
-                margin-bottom: 15px;
-            }
-
-            .product-description {
-                width: 100%;
-            }
-
-            .product-description h2 {
-                font-size: 1.6rem;
-            }
-
-            .price {
-                font-size: 1.4rem;
-            }
-
-            .modal-content {
-                width: 90%;
-            }
+    @media only screen and (max-width: 768px) {
+        .container {
+            padding-left: 20px;
+            padding-right: 20px; /* добавляем паддинг для мобильных устройств */
         }
+
+        .product-description {
+            text-align: center; /* гарантирует, что текст будет по центру */
+            padding-left: 0; /* убираем дополнительные отступы */
+            padding-right: 0; /* убираем дополнительные отступы */
+        }
+
+        .product-description h2 {
+            font-size: 1.6rem;
+        }
+
+        .price {
+            font-size: 1.4rem;
+        }
+
+        .stylish {
+            margin-left: 0; /* убираем смещение на мобильных устройствах */
+            font-size: 2rem; /* уменьшаем размер шрифта для мобильных */
+        }
+
+        .product-images {
+            flex-direction: column;
+            align-items: center; /* выравниваем изображения по центру */
+        }
+
+        .product-images img {
+            width: 80%; /* уменьшаем ширину изображений на мобильных устройствах */
+            margin-bottom: 15px; /* добавляем пространство между картинками */
+        }
+
+        .modal-content {
+            width: 90%; /* для мобильных устройств делаем модальное окно более узким */
+        }
+    }
+</style>
 
         @media only screen and (max-width: 480px) {
             header h1 {
