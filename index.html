@@ -259,89 +259,92 @@
             cursor: pointer;
         }
 
-        /* Адаптивные стили для мобильных устройств */
-        @media only screen and (max-width: 768px) {
-            .product-images {
-                flex-direction: column;
-                align-items: center;
-            }
+      /* Адаптивные стили для мобильных устройств */
+@media only screen and (max-width: 768px) {
+    .product-images {
+        flex-direction: column;
+        align-items: center;
+    }
 
-            .product-images img {
-                width: 70%;
-                margin-bottom: 15px;
-            }
+    .product-images img {
+        width: 70%;
+        margin-bottom: 15px;
+    }
 
-            .product-description {
-                width: 90%;
-            }
+    .product-description {
+        width: 90%;
+    }
 
-            .product-description h2 {
-                font-size: 1.6rem;
-            }
+    .product-description h2 {
+        font-size: 1.6rem;
+    }
 
-            .price {
-                font-size: 1.4rem;
-            }
+    .price {
+        font-size: 1.4rem;
+    }
 
-            .modal-content {
-                width: 90%;
-            }
+    .modal-content {
+        width: 90%;
+    }
 
-            .btn {
-                width: 100px;
-                font-size: 1.4rem;
-                padding: 7px 14px;
-            }
+    .btn {
+        width: 100px;
+        font-size: 1.4rem;
+        padding: 7px 14px;
+    }
 
-            /* Добавляем правила для видео на мобильных устройствах */
-            .plyr__video-embed {
-                width: 100%; /* Ставим ширину видео в 100% */
-                height: auto;
-                max-width: 100%; /* Видео не выходит за пределы контейнера */
-            }
-        }
+    /* Обновляем правила для видео */
+    .plyr__video-embed {
+        width: 100%; /* Устанавливаем ширину видео на 100% */
+        height: auto;
+        max-width: 100%; /* Видео не выходит за пределы контейнера */
+        border-radius: 10px; /* Сохраняем скругления углов */
+    }
+}
 
-        @media only screen and (max-width: 480px) {
-            header h1 {
-                font-size: 2.2rem;
-            }
+@media only screen and (max-width: 480px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
 
-            .product-description h2 {
-                font-size: 1.3rem;
-            }
+    .product-description h2 {
+        font-size: 1.3rem;
+    }
 
-            .product-description p {
-                font-size: 1rem;
-            }
+    .product-description p {
+        font-size: 1rem;
+    }
 
-            .product-description span {
-                font-size: 1.1rem;
-            }
+    .product-description span {
+        font-size: 1.1rem;
+    }
 
-            .sticker {
-                font-size: 1.3rem;
-            }
+    .sticker {
+        font-size: 1.3rem;
+    }
 
-            .price {
-                font-size: 1.3rem;
-            }
+    .price {
+        font-size: 1.3rem;
+    }
 
-            .product-images img {
-                width: 80%; /* Уменьшаем изображение на мобильных */
-            }
+    .product-images img {
+        width: 80%; /* Уменьшаем изображения на мобильных */
+    }
 
-            .btn {
-                width: 90px;
-                font-size: 1.3rem;
-                padding: 6px 12px;
-            }
+    .btn {
+        width: 90px;
+        font-size: 1.3rem;
+        padding: 6px 12px;
+    }
 
-            /* Еще больше адаптации для видео */
-            .plyr__video-embed {
-                width: 100%; /* Устанавливаем видео на всю ширину */
-                height: auto; 
-            }
-        }
+    /* Еще больше адаптации для видео */
+    .plyr__video-embed {
+        width: 100%; /* Устанавливаем видео на всю ширину */
+        height: auto; 
+        max-width: 100%;
+        border-radius: 10px;
+    }
+}
     </style>
 </head>
 <body>
